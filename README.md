@@ -1,71 +1,63 @@
-# mxng-module-duplicator README
+## Angular Module Duplicator
 
-This is the README for your extension "mxng-module-duplicator". After writing up a brief description, we recommend including the following sections.
+Angular Module Duplicator is a VS Code extension designed to simplify the process of duplicating Angular modules. It allows you to quickly clone an existing Angular module, rename files, update component names, selectors, and routes, all with just a few clicks.
 
 ## Features
+* Right-Click Duplication: Right-click on an Angular module folder in the file explorer and duplicate it instantly.
+* Rename Automation: Automatically renames files and updates module, component, and route names.
+* Streamlined Workflow: Saves time and reduces errors when creating new Angular modules from existing ones.
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+## How to Use
+1. Install the Extension:
 
-For example if there is an image subfolder under your extension project workspace:
+   * Download the .vsix file from your local build or shared location.
+   * Open VS Code.
+   * Go to the Extensions View (Ctrl+Shift+X or Cmd+Shift+X on Mac).
+   * Click on the Ellipsis Menu (•••) in the top-right corner.
+   * Select Install from VSIX... and choose the .vsix file.
 
-\!\[feature X\]\(images/feature-x.png\)
+2. Duplicate a Module:
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+   * Right-click on the folder of an existing Angular module in the file explorer.
+   * Select "Duplicate Angular Module" from the context menu.
+   * Enter a new name for the duplicated module when prompted.
+
+3. Review the New Module:
+
+   * The extension will create a new folder with all files renamed and updated to reflect the new module name.
+   * Verify the new module structure and make any additional edits as needed.
+
+## Example
+
+**Before:**
+
+```
+messaging/
+├── messaging.component.html
+├── messaging.component.ts
+├── messaging.module.ts
+├── messaging.routing.ts
+├── messaging.state.service.ts
+```
+
+**After:**
+
+Right-click the messaging folder, select Duplicate Angular Module, and provide notifications as the new name.
+
+```
+notifications/
+├── notifications.component.html
+├── notifications.component.ts
+├── notifications.module.ts
+├── notifications.routing.ts
+├── notifications.state.service.ts
+```
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+* Visual Studio Code version 1.78.0 or higher.
+* An existing Angular module to duplicate.
 
-## Extension Settings
+## Configuration
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+No additional configuration is required. The extension works out of the box.

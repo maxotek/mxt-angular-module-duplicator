@@ -1,8 +1,9 @@
 {
   "name": "mxng-module-duplicator",
-  "displayName": "mxng-module-duplicator",
+  "displayName": "Angular Module Duplicator",
   "description": "Duplicates an angular module duplicator making appropriate name changes to files and content",
   "version": "0.0.1",
+  "publisher": "Maxotek",
   "engines": {
     "vscode": "^1.96.0"
   },

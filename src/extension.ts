@@ -80,6 +80,32 @@ export function activate(context: vscode.ExtensionContext) {
 			const sourceCamel = camelCase(sourceKebab);
 			const targetCamel = camelCase(targetKebab);
 
+			const kebabSuffixes = [
+				'.module',
+				'.component',
+				'.resolver',
+				'.routing',
+				'.state.service',
+			];
+
+			const pascalSuffixes = [
+				'Module',
+				'Component',
+				'Resolver',
+				'Service',
+				'StateService',
+			];
+
+			const camelSuffixes = [
+				'Routes'
+			];
+
+			const encases = [
+				'"',
+				"'",
+				'.'
+			];
+
 			// check if the new module name already exists
 			const targetDir = path.join(path.dirname(sourceDir), targetKebab);
 			if (fs.existsSync(targetDir)) {
@@ -108,25 +134,6 @@ export function activate(context: vscode.ExtensionContext) {
 					} else {
 						let content = fs.readFileSync(srcPath, 'utf8');
 
-						const kebabSuffixes = [
-							'.module',
-							'.component',
-							'.resolver',
-							'.routing',
-							'.state.service',
-						];
-
-						const pascalSuffixes = [
-							'Module',
-							'Component',
-							'Resolver',
-							'StateService',
-						];
-
-						const camelSuffixes = [
-							'Routes'
-						];
-
 						kebabSuffixes.forEach((suffix, index) => {
 							content = content
 								.replaceAll(`${sourceKebab}${suffix}`, `${targetKebab}${suffix}`);
@@ -140,6 +147,13 @@ export function activate(context: vscode.ExtensionContext) {
 						camelSuffixes.forEach((suffix, index) => {
 							content = content
 								.replaceAll(`${camelCase(sourceCamel)}${suffix}`, `${camelCase(targetCamel)}${suffix}`);
+						});
+
+						encases.forEach((c, index) => {
+							content = content
+								.replaceAll(`${c}${sourcePascal}${c}`, `${c}${targetPascal}${c}`)
+								.replaceAll(`${c}${sourceCamel}${c}`, `${c}${targetCamel}${c}`)
+								.replaceAll(`${c}${sourceKebab}${c}`, `${c}${targetKebab}${c}`);
 						});
 
 						fs.writeFileSync(destPath, content);

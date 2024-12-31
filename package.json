@@ -1,28 +1,37 @@
 {
-  "name": "mxng-module-duplicator",
+  "name": "mxt-angular-module-duplicator",
   "displayName": "Angular Module Duplicator",
   "description": "Duplicates an angular module duplicator making appropriate name changes to files and content",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "publisher": "Maxotek",
   "engines": {
     "vscode": "^1.96.0"
   },
   "categories": [
+    "Programming Languages",
+    "Snippets",
     "Other"
+  ],
+  "keywords": [
+    "angular",
+    "module",
+    "duplicate",
+    "typescript",
+    "vscode-extension"
   ],
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "mxng-module-duplicator.duplicateModule",
+        "command": "mxt-angular-module-duplicator.duplicateModule",
         "title": "Duplicate Angular Module"
       }
     ],
     "menus": {
       "explorer/context": [
         {
-          "command": "mxng-module-duplicator.duplicateModule",
+          "command": "mxt-angular-module-duplicator.duplicateModule",
           "when": "explorerResourceIsFolder",
           "group": "navigation"
         }

@@ -24,7 +24,7 @@ import * as vscode from 'vscode';
 // Your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
 	const disposable = vscode.commands.registerCommand(
-		'mxng-module-duplicator.duplicateModule',
+		'mxt-angular-module-duplicator.duplicateModule',
 		async (uri: vscode.Uri) => {
 			// check if a folder is selected
 			if (!uri || !fs.lstatSync(uri.fsPath).isDirectory()) {

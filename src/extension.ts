@@ -59,6 +59,18 @@ export function activate(context: vscode.ExtensionContext) {
 				return;
 			}
 
+			const files = fs.readdirSync(sourceDir);
+			const hasModuleFile = files.some((file) =>
+				file.endsWith('.module.ts')
+			);
+
+			if (!hasModuleFile) {
+				vscode.window.showErrorMessage(
+					'This folder does not contain a .module.ts file.'
+				);
+				return;
+			}
+
 			const sourceKebab = path.basename(sourceDir);
 			const sourcePascal = pascalCase(sourceKebab);
 

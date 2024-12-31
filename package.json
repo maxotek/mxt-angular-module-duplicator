@@ -4,6 +4,10 @@
   "description": "Duplicates an angular module duplicator making appropriate name changes to files and content",
   "version": "1.0.0",
   "publisher": "Maxotek",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maxotek/mxt-angular-module-duplicator"
+  },
   "engines": {
     "vscode": "^1.96.0"
   },
@@ -33,7 +37,7 @@
         {
           "command": "mxt-angular-module-duplicator.duplicateModule",
           "when": "explorerResourceIsFolder",
-          "group": "navigation"
+          "group": "z_commands"
         }
       ]
     }
